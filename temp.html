@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Array Programs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    pre {
+      background: #272822;
+      color: #f8f8f2;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Program 1: Array Basic Operations, Indexing and Slicing</h2>
+  <button onclick="copyCode('code1')">Copy Code</button>
+  <pre id="code1">
+import numpy as np
+
+arr = np.array([10,20,30,40,50])
+
+print("Original:", arr)
+print("Add 5:", arr+5)
+print("Multiply by 2:", arr*2)
+print("Sum:", arr.sum())
+
+print("First Element:", arr[0])
+print("Last Element:", arr[-1])
+
+print("Index 1 to 3:", arr[1:4])
+print("Start to 2:", arr[:3])
+print("2 to End:", arr[2:])
+  </pre>
+
+  <h2>Program 2: Array Aliasing and Copying</h2>
+  <button onclick="copyCode('code2')">Copy Code</button>
+  <pre id="code2">
+import numpy as np
+
+arr = np.array([10,20,30,40])
+
+alias_arr = arr
+copy_arr = arr.copy()
+
+arr[0] = 100
+
+print("Original array (after change):", arr)
+print("Aliased array (changes reflect):", alias_arr)
+print("Copied array (no change):", copy_arr)
+  </pre>
+
+  <script>
+    function copyCode(id) {
+      const codeBlock = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(codeBlock).then(() => {
+        alert("Code copied to clipboard!");
+      });
+    }
+  </script>
+
+</body>
+</html>
